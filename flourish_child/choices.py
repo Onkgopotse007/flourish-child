@@ -1415,3 +1415,13 @@ HIV_PERSPECTIVE = (
     ('most_people_think_that', 'Most people think that'),
     (NOT_APPLICABLE, 'Not Applicable')
 )
+
+TB_REFERRAL_REASON_CHOICES = (
+    ('cough', 'Cough'),
+    ('fever', 'Fever'),
+    ('night_sweats', 'Night sweats'),
+    ('weight_loss', 'Weight loss'),
+    ('fatigue', 'Fatigue'),
+    ('household_Contact_with_TB', 'Household Contact with TB'),
+    ('other', 'Other'),
+)
