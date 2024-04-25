@@ -3,7 +3,7 @@ from edc_constants.choices import YES_NO
 
 from flourish_caregiver.models.model_mixins.flourish_tb_screening_mixin import \
     TBScreeningMixin
-from flourish_child.choices import TEST_RESULTS_CHOICES
+from flourish_child.choices import TEST_RESULTS_CHOICES, TB_TEST_CHOICES
 from flourish_child.models.child_crf_model_mixin import ChildCrfModelMixin
 
 
@@ -60,6 +60,17 @@ class ChildTBScreening(TBScreeningMixin, ChildCrfModelMixin):
         choices=YES_NO,
         max_length=3,
         blank=True, null=True)
+    evaluated_for_tb = models.CharField(
+        verbose_name='Since the last time you spoke with FLOURISH staff, has your child '
+                     'been evaluated in a clinic for TB? ',
+        choices=YES_NO,
+        max_length=3,
+    )
+    tb_tests = models.CharField(
+        verbose_name='What diagnostic tests were performed for TB?',
+        choices=TB_TEST_CHOICES,
+        max_length=15,
+        blank=True, null=True )
 
     class Meta(ChildCrfModelMixin.Meta):
         app_label = 'flourish_child'
